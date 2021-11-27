@@ -1,12 +1,23 @@
 import React from "react";
 import Form from "./components/Form";
 import "./App.css";
+// import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return <div>
     <Form />
   </div>;
 }
+
+// function App() {
+//   return (
+//       <main>
+//           <Route>
+//           <Form />
+//           </Route>
+//       </main>
+//   )
+// }
 
 export default App; 
 
