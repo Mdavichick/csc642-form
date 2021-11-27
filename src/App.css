@@ -63,7 +63,7 @@
 }
 
 .checkBox{
-  margin-left: 25px;
+  margin-left: 30px;
 }
 .password{
   margin-bottom: 40px;
@@ -107,7 +107,11 @@
 .link{
   margin-bottom: 10px
 }
-
+.checklist{
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
 .submit{
   display: flex;
   text-transform: uppercase; 
@@ -141,3 +145,9 @@ input, select, textarea{
   color: #080303;
 }
 
+.signature{
+  color:#050303ab;
+  margin-left: 540px;
+  margin-bottom:-20px;
+  margin-right:-50px;
+}

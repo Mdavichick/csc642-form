@@ -10,7 +10,7 @@ const SurveyForm = () => {
         <div className ="container">
             <div className="app-wrapper">
                 <div>
-                    <h2 className="title">Survey Form</h2>
+                    <h2 className="title">CSC 642-842 Survey Form</h2>
                 </div>
                 <form className ="form-wrapper">
                 <Form>
@@ -37,14 +37,14 @@ const SurveyForm = () => {
 
                 {/* Height */}
                 <div className="height">
-                        <label className="label">Height (feet, inches) </label>
+                        <label className="label">Height <i>(feet, inches)</i> </label>
                         <input className="input-2 feet" type="number" min="0" max="10" id ="feet" placeholder="feet"/>
                         <input className="input-2 inches" type="number" min="0" max="11" id="inches" placeholder="inches"/>
                 </div>
 
                 {/* Phone Number */}
                 <div className="phone">
-                        <label className="label">Phone Number (format: xxx-xxx-xxxx)</label>
+                        <label className="label">Phone Number <i>(format: xxx-xxx-xxxx)</i></label>
                         <input className="input" placeholder="xxx-xxx-xxxx" type="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
                         {/* <br><br><small>Format: 123-45-678</small></br></br> */}
                 </div>
@@ -62,7 +62,7 @@ const SurveyForm = () => {
                 </Row>
 
                 {/* Services Request */}
-                <div className="fname">Check all services you require</div>
+                <div className="checklist">Check all services you require</div>
                 <Form>
                 {['E-mail','Phone','Facebook','Twitter','Surface mail', 'Personal visit'].map((type) => (
                     <div key={`default-${type}`} className="checkBox">
@@ -102,7 +102,7 @@ const SurveyForm = () => {
                     Submit
                 </Button>
              
-        
+                <p className="signature">@Mdavichick</p>
                 </Form>
                 </form>      
             </div>
@@ -110,19 +110,6 @@ const SurveyForm = () => {
     )
 }
 
-// function phonenumber(inputtxt)
-// {
-//   var phoneno = /^\d{10}$/;
-//   if(inputtxt.value.match(phoneno))
-//   {
-//       return true;
-//   }
-//   else
-//   {
-//      alert("Not a valid Phone Number");
-//      return false;
-//   }
-// }
 
 
 
