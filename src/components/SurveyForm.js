@@ -15,17 +15,18 @@ const SurveyForm = () => {
                 <form className ="form-wrapper">
                 <Form>
 
-
+                {/* Last and First Name  */}
                 <div className="lname">
-                        <label className="label">Last Name</label>
-                        <input className="input" type="text"/>
+                        <label className="label">Last Name *</label>
+                        <input className="input" placeholder="                        Please enter last name - required" type="text" required/>
                 </div>
                     <div className="fname">
-                        <label className="label">First Name</label>
-                        <input className="input" type="text"/>
-                
-                <div className = "prefTitle"> Choose preferred title </div>
-                <Form.Select aria-label="Default select example">
+                        <label className="label">First Name *</label>
+                        <input className="input" placeholder="                        Please enter first name - required" type="text" required/>
+                        
+                {/* Preffered Title */}
+                <div className = "prefTitle"> Choose preferred title *</div>
+                <Form.Select aria-label="Default select example" required>
                 <option value="none">None</option>
                 <option value="student">Student</option>
                 <option value="professor">Professor</option>
@@ -34,32 +35,34 @@ const SurveyForm = () => {
                 </Form.Select>
                 </div>
 
+                {/* Height */}
                 <div className="height">
                         <label className="label">Height (feet, inches) </label>
-                        <input className="input-2 feet" type="number"/>
-                        <input className="input-2 inches" type="number"/>
+                        <input className="input-2 feet" type="number" min="0" max="10" id ="feet" placeholder="feet"/>
+                        <input className="input-2 inches" type="number" min="0" max="11" id="inches" placeholder="inches"/>
                 </div>
 
+                {/* Phone Number */}
                 <div className="phone">
-                        <label className="label">Phone Number</label>
-                        <input className="input" type="number"/>
+                        <label className="label">Phone Number (format: xxx-xxx-xxxx)</label>
+                        <input className="input" placeholder="xxx-xxx-xxxx" type="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                        {/* <br><br><small>Format: 123-45-678</small></br></br> */}
                 </div>
 
                 {/* Address Validation */}
-                <div className="address">Address</div>
-                <Row className="lname">
+                <div className="address">Address *</div>
+                <Row className="address-entry">
                     <Col xs={10}>
                     <Form.Control placeholder="City" />
-                    </Col>
-                    <Col>
+                    
                     <Form.Control placeholder="State" />
-                    </Col>
-                    <Col>
+                    
                     <Form.Control placeholder="Zip" />
                     </Col>
                 </Row>
 
-                <div className="budget">Check all services you require</div>
+                {/* Services Request */}
+                <div className="fname">Check all services you require</div>
                 <Form>
                 {['E-mail','Phone','Facebook','Twitter','Surface mail', 'Personal visit'].map((type) => (
                     <div key={`default-${type}`} className="checkBox">
@@ -73,32 +76,54 @@ const SurveyForm = () => {
                 ))}
                 </Form>
                 
+                {/* Monthly Budget Services */}
                 <div className = "budget"> Monthly budget for servies </div>
-                <Form.Select aria-label="Default select example" className = "checkBox">
+                <Form.Select aria-label="Default select example" className = "budget">
                 <option value="none">Less than $50</option>
                 <option value="student">Between $50 and $100</option>
                 <option value="professor">Above $100</option>
                 </Form.Select>
                 
+                {/* Email */}
                 <div className="email">
                         <label className="label">Email</label>
-                        <input className="input" type="email"/>
                 </div>
 
+                <Row className="address-entry-2">
+                <input className="address-entry-2" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required></input>
+                </Row>
+
+                {/* Terms and Servies */}
                 <Form.Group className="terms" controlId="formBasicCheckbox">
-                <a href="https://www.w3schools.com/">Terms and Servies</a> 
-                <Form.Check type="checkbox" label=" I agree to terms and services" a href="https://www.w3schools.com/" />
+                <a className="link" href="https://policies.google.com/terms?hl=en-US">Terms and Servies *</a> 
+                <Form.Check type="checkbox" label=" I agree to Terms and Services *"/>
                 </Form.Group>
-                <Button className="terms" variant="primary" type="submit">
+                <Button className="terms" variant="primary" type="submit"  >
                     Submit
                 </Button>
              
-                
+        
                 </Form>
                 </form>      
             </div>
         </div>
     )
 }
+
+// function phonenumber(inputtxt)
+// {
+//   var phoneno = /^\d{10}$/;
+//   if(inputtxt.value.match(phoneno))
+//   {
+//       return true;
+//   }
+//   else
+//   {
+//      alert("Not a valid Phone Number");
+//      return false;
+//   }
+// }
+
+
 
 export default SurveyForm;
