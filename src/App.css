@@ -151,3 +151,44 @@ input, select, textarea{
   margin-bottom:-20px;
   margin-right:-50px;
 }
+
+.mapsize{
+  /* background: linear-gradient(135deg,hsl(276, 83%, 50%), hsla(202, 71%, 38%, 0.863)); */
+  width: 100%;
+  max-height: 30%;
+
+  display: contents;
+  /* justify-content: center;
+  align-items: center; */
+}
+body {
+  background-color: rebeccapurple;
+  color: black;
+}
+
+h1 {
+  font-family: sans-serif;
+}
+/* 
+.container {
+  margin: 0 100px;
+  border: 1px solid green;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+} */
+
+#map {
+  flex: 1;
+  border: 5px dashed red;
+}
+
+.container-content img {
+  margin: 0px;
+  min-width: 450px;
+  padding: 0px;
+  width: 100%;
+}
+.showaddress{
+  text-align: center
+}
