@@ -3,11 +3,12 @@ import { Form, Row, Col, Button } from "react-bootstrap";
 import {Link} from "react-router-dom";
 // import Confirmation from './Confirmation';
 // import { useHistory } from "react-router-dom";
+import Recaptcha from 'react-recaptcha';
 
 class SurveyForm extends React.Component{
     constructor(props){
         super(props)
-
+        this.recaptchaLoaded = this.recaptchaLoaded.bind(this); 
         this.state={
             lname:'',
             fname:'',
@@ -19,9 +20,12 @@ class SurveyForm extends React.Component{
             addstate:'',
             addzip:'',
             email:'',
+            isVerified: false,
         }
     }
-
+    recaptchaLoaded(){
+        console.log('captcha loaded successfully');
+    }
     handleLNameChange = (event) =>{
         this.setState({
             lname: event.target.value,
@@ -287,6 +291,13 @@ class SurveyForm extends React.Component{
                     </form>     */}
             
            
+
+            <Recaptcha
+                sitekey= "6LdEs2wdAAAAALI2UPAvdEus6XYFOi5LsOu6u4p0"
+                render="explicit"
+                onloadCallback={this.recaptchaLoaded}
+                />
+
             <Link
                 to={{
                 pathname: "/confirmation",
@@ -305,8 +316,10 @@ class SurveyForm extends React.Component{
                 </form>      
                 
             </div>
+
         </div>
         
+
     )
     
 }

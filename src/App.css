@@ -192,3 +192,13 @@ h1 {
 .showaddress{
   text-align: center
 }
+
+h1{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #281414;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+}
