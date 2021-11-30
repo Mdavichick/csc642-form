@@ -3,7 +3,7 @@ import SurveyForm from "./SurveyForm";
 
 const Form = () => {
     return (
-        <div>
+        <div>        
             <SurveyForm />
         </div>
     )

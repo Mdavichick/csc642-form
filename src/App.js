@@ -1,23 +1,38 @@
 import React from "react";
+
+import "./App.css"
+// import { Route, Routes } from 'react-router-dom';
 import Form from "./components/Form";
-import "./App.css";
-// import { Routes, Route } from 'react-router-dom';
+import Confirmation from "./components/Confirmation";
 
-const App = () => {
-  return <div>
-    <Form />
-  </div>;
-}
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+// import SurveyForm from "./components/SurveyForm";
 
+
+
+// Default 
 // function App() {
-//   return (
-//       <main>
-//           <Route>
-//           <Form />
-//           </Route>
-//       </main>
+//   return (  
+//       <div>
+//         <Form/> 
+//         </div> 
 //   )
 // }
+
+function App() {
+
+  return (  
+      <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<Form/>} component={Form}/>
+      <Route path="/confirmation" element={<Confirmation/>} component={Form}/>
+      </Routes>
+      
+      </BrowserRouter>
+      
+  )
+}
+
 
 export default App; 
 

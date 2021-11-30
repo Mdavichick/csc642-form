@@ -1,9 +1,10 @@
-// import { render } from '@testing-library/react';
 import React,{Component} from 'react';
 import { Form, Row, Col, Button } from "react-bootstrap";
-// import { Link } from 'react-router';
-// import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
-class SurveyForm extends Component{
+import {Link} from "react-router-dom";
+// import Confirmation from './Confirmation';
+// import { useHistory } from "react-router-dom";
+
+class SurveyForm extends React.Component{
     constructor(props){
         super(props)
 
@@ -25,86 +26,160 @@ class SurveyForm extends Component{
         this.setState({
             lname: event.target.value,
         })
+        localStorage.setItem('lname',event.target.value);
     }
     handleFNameChange = (event) =>{
         this.setState({
             fname: event.target.value,
         })
+        localStorage.setItem('fname',event.target.value);
+
     }
     handleTitleChange = (event) =>{
         this.setState({
             title: event.target.value,
         })
+        localStorage.setItem('title',event.target.value);
+
     }
     handleHeightInchChange = (event) =>{
         this.setState({
             heightinch: event.target.value,
         })
+        localStorage.setItem('heightinch',event.target.value);
+
     }
     handleHeightFeetChange = (event) =>{
         this.setState({
             heightfeet: event.target.value,
         })
+        localStorage.setItem('heightfeet',event.target.value);
+
     }
     handlePnumberChange = (event) =>{
         this.setState({
             pnumber: event.target.value,
         })
+        localStorage.setItem('pnumber',event.target.value);
+
     }
     handleCityChange = (event) =>{
         this.setState({
             addcity: event.target.value,
         })
+        localStorage.setItem('addcity',event.target.value);
+
     }
     handleStateChange = (event) =>{
         this.setState({
             addstate: event.target.value,
         })
+        localStorage.setItem('addstate',event.target.value);
+
     }
     handleZipChange = (event) =>{
         this.setState({
             addzip: event.target.value,
         })
+        localStorage.setItem('addzip',event.target.value);
+
     }
     handleEmailChange = (event) =>{
         this.setState({
             email: event.target.value,
         })
+        localStorage.setItem('email',event.target.value);
+
     }
     handleStudent =(event) =>{
         this.setState({
             title: "Student",
         })
+        localStorage.setItem('title',event.target.value);
+
     }
     handleProfessor =(event) =>{
         this.setState({
             title: "Professor",
         })
+        localStorage.setItem('title',event.target.value);
+
     }
     handleStaff =(event) =>{
         this.setState({
             title: "Staff",
         })
+        localStorage.setItem('title',event.target.value);
+
     }
     handleRetired =(event) =>{
         this.setState({
             title: "Retired",
         })
+        localStorage.setItem('title',event.target.value);
+
     }
+
+
     handleSubmit = (event) => {
-       alert(`
-            fname: ${this.state.fname} 
-            lname: ${this.state.lname} 
-            title: ${this.state.title}
-            heightinch: ${this.state.heightinch}
-            heightfeet: ${this.state.heightfeet}
-            pnumber: ${this.state.pnumber}
-            addcity: ${this.state.addcity}
-            addstate: ${this.state.addstate}
-            addzip: ${this.state.addzip}
-            email: ${this.state.email}
-            `);
+        event.preventDefault();
+        // alert(`
+        //     fname: ${this.state.fname} 
+        //     lname: ${this.state.lname} 
+        //     title: ${this.state.title}
+        //     heightinch: ${this.state.heightinch}
+        //     heightfeet: ${this.state.heightfeet}
+        //     pnumber: ${this.state.pnumber}
+        //     addcity: ${this.state.addcity}
+        //     addstate: ${this.state.addstate}
+        //     addzip: ${this.state.addzip}
+        //     email: ${this.state.email}
+        //     `);
+        
+            window.location.href='./confirmation';
+        
     }
+
+
+
+ 
+
+
+//     handleSubmit(e){
+//         // e.preventDefault();
+//         this.props(this.state).then(
+//             () => {
+//                this.context.router.push({
+//                   pathname: '/confirmation',
+//                   state: { lname:this.state.lname,
+//                   fname:this.state.fname,
+//                   title:this.state.title,
+//                   heightinch:this.state.heightinch,
+//                   heightfeet:this.state.heightfeet,
+//                   pnumber:this.state.pnumber,
+//                   addcity:this.state.addcity,
+//                   addstate:this.state.addstate,
+//                   addzip:this.state.addzip,
+//                   email:this.state.email,
+//                 }  
+//                })
+//             },
+//          )
+//    }
+
+    // handlepush (e) {
+    // localStorage.setItem("lname", this.state.lname);
+    // localStorage.setItem("lname",this.state.lname);
+    // localStorage.setItem("title", this.state.title);
+    // localStorage.setItem("heightinch", this.state.heightinch);
+    // localStorage.setItem("heightfeet", this.state.heightfeet)
+    // localStorage.setItem("pnumber", this.state.pnumber);
+    // localStorage.setItem("addcity", this.state.addcity);
+    // localStorage.setItem("addstate", this.state.addstate);
+    // localStorage.setItem("addzip", this.state.addzip);
+    // localStorage.setItem("email", this.state.email);
+//  }
+
 // const SurveyForm = () => {
 //     return(
     render(){
@@ -199,23 +274,45 @@ class SurveyForm extends Component{
                 <a className="link" href="https://policies.google.com/terms?hl=en-US">Terms and Servies *</a> 
                 <Form.Check type="checkbox" label=" I agree to Terms and Services *" required/>
                 </Form.Group>
-                <Button className="terms" variant="primary" type="submit" onClick={this.handleSubmit}>
+                
+                
+
+                {/* <script>
+                function myFunction() {
+                window.location.href="./confirmation"}
+                </script> */}
+
+                     {/* <form className="terms" action="./confirmation">  
+                        <input type="submit"/>  
+                    </form>     */}
+            
+           
+            <Link
+                to={{
+                pathname: "/confirmation",
+                state: this.state
+                }}
+            >
+                {/* onClick={this.handleSubmit} onChange={this.handleSubmit} */}
+                <Button className="terms" variant="primary" type="submit" onSubmit={this.handleSubmit} >
                     Submit
                 </Button>
 
-                     {/* <form className="terms" action="./SurveyForm">  
-                        <input type="submit"/>  
-                    </form>     */}
-             
+                </Link>
+
                 <p className="signature">@Mdavichick</p>
                 </Form>
                 </form>      
+                
             </div>
         </div>
+        
     )
+    
 }
 
 }
+
 
 
 export default SurveyForm;
